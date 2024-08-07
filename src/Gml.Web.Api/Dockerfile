@@ -27,4 +27,5 @@ FROM adoptopenjdk:11-jdk AS java
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+WORKDIR /home/container
 ENTRYPOINT ["dotnet", "Gml.Web.Api.dll"]
